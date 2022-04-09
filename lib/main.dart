@@ -31,7 +31,7 @@ class MyCard extends StatelessWidget {
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Hello'),
+            Text('Helloㅇㅁㄴㅇ'),
             Text('Hello'),
             Text('Hello'),
           ],
