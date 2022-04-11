@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -8,35 +10,49 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '성진앱',
-      theme: ThemeData(primarySwatch: Colors.amber),
-      home: MyCard()
+      title: 'BBANRO',
+      home: Grade(),
     );
   }
 }
 
-class MyCard extends StatelessWidget {
-  const MyCard({ Key? key }) : super(key: key);
+
+class Grade extends StatelessWidget {
+  const Grade({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.amber[800],
       appBar: AppBar(
-        title: Text('BBANTO'),
+        title: const Text('BBANTO'),
+        backgroundColor: Colors.amber[600],
         centerTitle: true,
-        backgroundColor: Colors.red,
         elevation: 0.0,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(30.0, 40.0, 0, 0),
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Helloㅇㅁㄴㅇ'),
-            Text('Hello'),
-            Text('Hello'),
-          ],
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            const Text('NAME', style: TextStyle(
+              color: Colors.white,
+              letterSpacing: 2.0
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            const Text('BBANTO ', style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ]
         ),
-      )
+      ),
     );
   }
 }
