@@ -24,90 +24,32 @@ class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.red,
+      appBar: AppBar( 
+        // backgroundColor: Colors.red,
         title: Text('AppBar Icon Menu'),
         elevation: 0.0,
-        // leading: IconButton(
-        //   icon: Icon(Icons.menu),
-        //   onPressed: () { 
-        //     print('menu button');
-        //   },
-        // ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.shopping_cart),
-            onPressed: () { 
-              print('shopingCart');
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () { 
-              print('search');
-            },
-          ),
-        ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            UserAccountsDrawerHeader(
-              accountName: Text('honey'),
-              accountEmail: Text('honey.kikiki'),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/honey.png'),
-                backgroundColor: Colors.white
-              ),
-              otherAccountsPictures: [
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/honey.png'),
-                  backgroundColor: Colors.white
-                ),
-                // CircleAvatar(
-                //   // backgroundImage: AssetImage('assets/honey.png'),
-                //   backgroundColor: Colors.black
-                // )
-              ],
-              onDetailsPressed: () {
-                print('arrow in clicked');
+      body: Center(
+        child: ElevatedButton(
+        onPressed: () {
+          final snackBar = SnackBar(
+            content: const Text('Yay! A SnackBar!'),
+            action: SnackBarAction(
+              label: 'Undo',
+              onPressed: () {
+                // Some code to undo the change.
               },
-              decoration: BoxDecoration(
-                color: Colors.red[200],
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(40.0),
-                  bottomRight: Radius.circular(40.0)
-                )
-              ),
             ),
-            ListTile(
-              leading: Icon(Icons.home, color: Colors.grey,),
-              title: Text('Home'),
-              onTap: () {
-                print('Home');
-              },
-              trailing: Icon(Icons.add),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings, color: Colors.grey,),
-              title: Text('settings'),
-              onTap: () {
-                print('settings');
-              },
-              trailing: Icon(Icons.add),
-            ),
-            ListTile(
-              leading: Icon(Icons.question_answer, color: Colors.grey,),
-              title: Text('Q&A'),
-              onTap: () {
-                print('Q&A');
-              },
-              trailing: Icon(Icons.add),
-            )
-          ],
-        ),
+          );
+
+          // Find the ScaffoldMessenger in the widget tree
+          // and use it to show a SnackBar.
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        },
+        child: const Text('Show SnackBar'),
       ),
+      ),
+      
     );
   }
 }
