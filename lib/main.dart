@@ -42,16 +42,16 @@ class MyPage extends StatelessWidget {
 
 void flutterToast() {
   Fluttertoast.showToast(
-      msg: "This is Center Short Toast", // 메시지 내용
-      toastLength: Toast.LENGTH_SHORT, // 메시지 시간 - 안드로이드
-      // gravity: ToastGravity.BOTTOM, // 메시지 위치
-      timeInSecForIosWeb: 1, // 메시지 시간 - iOS 및 웹
-      backgroundColor: Colors.red, // 배경
-      textColor: Colors.black, // 글자
-      fontSize: 26.0,
-      webBgColor:'red',
-      webPosition: 'center' // 위치 조절
-    ); // 글자 크기
+    msg: "This is Center Short Toast", // 메시지 내용
+    toastLength: Toast.LENGTH_LONG, // 메시지 시간 - 안드로이드
+    // gravity: ToastGravity.BOTTOM, // 메시지 위치
+    timeInSecForIosWeb: 1, // 메시지 시간 - iOS 및 웹
+    backgroundColor: Colors.blue, // 배경
+    textColor: Colors.white, // 글자
+    fontSize: 26.0,
+    webBgColor:'00b09b', // 배경색
+    webPosition: 'center' // 위치 조절
+  ); // 글자 크기
 }
 
 // class MyToast extends StatelessWidget {
