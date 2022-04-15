@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:fluttertoast/fluttertoast.dart';
 main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -24,32 +24,60 @@ class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( 
-        // backgroundColor: Colors.red,
-        title: Text('AppBar Icon Menu'),
-        elevation: 0.0,
+      appBar: AppBar(
+        title: Text('snack bar'),
+        centerTitle: true,
       ),
-      body: Center(
-        child: ElevatedButton(
-        onPressed: () {
-          final snackBar = SnackBar(
-            content: const Text('Yay! A SnackBar!'),
-            action: SnackBarAction(
-              label: 'Undo',
-              onPressed: () {
-                // Some code to undo the change.
-              },
-            ),
-          );
+      body: MyToast(),
+    );
+  }
+}
 
-          // Find the ScaffoldMessenger in the widget tree
-          // and use it to show a SnackBar.
-          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        },
-        child: const Text('Show SnackBar'),
-      ),
+class MyToast extends StatelessWidget {
+  const MyToast({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: TextButton(
+        onPressed: () {},
+        child: Text('Toast'),
       ),
       
     );
   }
 }
+
+
+// class MySnackBar extends StatelessWidget {
+//   const MySnackBar({ Key? key }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: ElevatedButton(
+//         child: Text('show me'),
+//         onPressed: () {
+//           ScaffoldMessenger.of(context).showSnackBar(
+//             SnackBar(
+//               content: const Text('Hello!',
+//                 textAlign: TextAlign.center,
+//                 style: TextStyle(
+//                   color: Colors.white
+//                 ),
+//               ),
+//               backgroundColor: Colors.teal,
+//               duration: Duration(milliseconds: 1000),
+//               action: SnackBarAction(
+//                 label: 'Undo',
+//                 onPressed: () {
+//                   // Some code to undo the change.
+//                 },
+//               ),
+//             )
+//           );
+//         },
+//       )
+//     );
+//   }
+// }
