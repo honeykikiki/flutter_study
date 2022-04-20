@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+// ece188dcee0c20adee04466f0f027711882d24b7
+// Wed Apr 20 20:19:19 2022 +0900
+// Tue Apr 19 11:00:00 2022 +0900
 
 class MyPage extends StatelessWidget {
   const MyPage({Key? key}) : super(key: key);
@@ -30,17 +33,17 @@ class MyPage extends StatelessWidget {
             Container(
               height: 100.0,
               color: Colors.blue,
-              child: Text('container1'),
+              child: const Text('container1'),
             ),
             Container(
               height: 100.0,
               color: Colors.red,
-              child: Text('container2'),
+              child: const Text('container2'),
             ),
             Container(
               height: 100.0,
               color: Colors.green,
-              child: Text('container3'),
+              child: const Text('container3'),
             ),
             Container(
               width: double.infinity,
