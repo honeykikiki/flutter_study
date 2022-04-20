@@ -30,17 +30,17 @@ class MyPage extends StatelessWidget {
             Container(
               height: 100.0,
               color: Colors.blue,
-              child: Text('container1'),
+              child: const Text('container1'),
             ),
             Container(
               height: 100.0,
               color: Colors.red,
-              child: Text('container2'),
+              child: const Text('container2'),
             ),
             Container(
               height: 100.0,
               color: Colors.green,
-              child: Text('container3'),
+              child: const Text('container3'),
             ),
             Container(
               width: double.infinity,
