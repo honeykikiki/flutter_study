@@ -23,21 +23,23 @@ class MyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: Column(
           verticalDirection: VerticalDirection.up,
           children: [
             Container(
+              width: 100.0,
               height: 100.0,
               color: Colors.blue,
               child: Text('container1'),
             ),
             Container(
+              width: 100.0,
               height: 100.0,
               color: Colors.red,
               child: Text('container2'),
             ),
             Container(
+              width: 100.0,
               height: 100.0,
               color: Colors.green,
               child: Text('container3'),
