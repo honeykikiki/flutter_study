@@ -58,35 +58,31 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
     // 전시장 구분 탭 초기화
     _tabBuildingList.add(
       Container(
-        height: FixedSize.buttonHeightSm,
-        child: Tab(child: Text('회의실 대관안내', style: Fonts.headLine(color: null))),
+        height: 32.0,
+        child: Tab(child: Text('회의실 대관안내')),
       )
     );
     _tabBuildingList.add(
       Container(
-        height: FixedSize.buttonHeightSm,
-        child: Tab(child: Text('전시장 대관안내', style: Fonts.headLine(color: null))),
+        height: 32.0,
+        child: Tab(child: Text('전시장 대관안내')),
       )
     );
 
     // 전시장 구분 탭 컨트롤러 등록
     _tabController = TabController(vsync: this, length: _tabBuildingList.length);
-    _tabController.addListener(_handleSelectedTab);
+    _tabController.addListener(() => setState(() {}));
     
-    _onRefresh();
   }
   
   @override
   Widget build(BuildContext context) {
 
-    return Frame.main(context,
-      padding: null,
-      appBarTitle: '예약관리',
-      child: RefreshIndicator(
-        onRefresh: _onRefresh,
+    return Scaffold(
+      body: Container(
         child: SingleChildScrollView(
           controller: _scrollController,
-          padding: const EdgeInsets.only(bottom: FixedPadding.md * 3),
+          padding: const EdgeInsets.only(bottom: 24.0 * 3),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -113,14 +109,14 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
     if (mettingContent.isEmpty) { // 회의실 타이틀이 없는경우
       return Center(
         child: Container(
-          margin: const EdgeInsets.only(top: FixedPadding.md * 2),
-          child: Text(RESULT_MSG_NO_LIST, style: Fonts.footNote()),
-        ),
+          margin: const EdgeInsets.only(top: 24.0 * 2),
+          child: Text('RESULT_MSG_NO_LIST'),
+        )
       );
     }
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: FixedPadding.layoutMargin),
+      margin: EdgeInsets.symmetric(horizontal: 24.0),
       child: ListView.separated(
         shrinkWrap: true,
         primary: false,
@@ -130,7 +126,7 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
         itemCount: titleList.length,
         itemBuilder: (context, i) {
           return Container(
-            margin: const EdgeInsets.only(top: FixedPadding.md * 2),
+            margin: const EdgeInsets.only(top: 24.0 * 2),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -141,18 +137,18 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
                       children: [
                         ClipOval(
                           child: Container(
-                            width: FixedSize.iconSm,
-                            height: FixedSize.iconSm,
-                            color: COLOR_PRIMARY,
+                            width: 32.0,
+                            height: 32.0,
+                            color: Colors.black,
                           ),
                         ),
-                        Text((i + 1).toString(), style: Fonts.body(color: TEXT_WHITE))
+                        Text((i + 1).toString())
                       ],
                     ),
                     Expanded(
                       child: Container(
-                        margin: const EdgeInsets.only(left: FixedPadding.md),
-                        child: Text(titleList[i], style: Fonts.headLine())
+                        margin: const EdgeInsets.only(left: 24.0),
+                        child: Text(titleList[i])
                       )
                     )
                   ],
@@ -177,7 +173,7 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
       itemCount: contentList[titleIndex].length,
       itemBuilder: (context, i) {
         return Container(
-          margin: EdgeInsets.only(left: FixedPadding.md + FixedSize.iconSm, top: FixedPadding.sm),
+          margin: EdgeInsets.only(left: 24.0 + 32.0, top: 24.0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -185,7 +181,7 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
               Text('•'),
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.only(left: FixedPadding.md),
+                  margin: EdgeInsets.only(left: 24.0),
                   child: Text(contentList[titleIndex][i].toString()),
                 )
               )
@@ -199,52 +195,52 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
   // 하단 관련 서류
   _buildetc() {
     return Container(
-      margin: EdgeInsets.fromLTRB(FixedPadding.layoutMargin, FixedPadding.md * 2, FixedPadding.layoutMargin, 0),
+      margin: EdgeInsets.fromLTRB(24.0, 24.0 * 2, 24.0, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('관련 서류', style: Fonts.footNote()),
+          Text('관련 서류'),
           Container(
-            margin: EdgeInsets.only(top: FixedPadding.sm),
+            margin: EdgeInsets.only(top: 24.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('※'),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.only(left: FixedPadding.xxs),
-                    child: Text('행사계획서 / 사업자등록증 사본 / 임대신청서(홈페이지 자료실 참조) / 날인된 계약서 / 작업 신고서 / 행사 평면도(기본부스, 독립부스) / 기술 지원 신청서 / 물품 반입 신청서', style: Fonts.footNote()),
+                    margin: EdgeInsets.only(left: 24.0),
+                    child: Text('행사계획서 / 사업자등록증 사본 / 임대신청서(홈페이지 자료실 참조) / 날인된 계약서 / 작업 신고서 / 행사 평면도(기본부스, 독립부스) / 기술 지원 신청서 / 물품 반입 신청서'            ),
                   ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 24.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('※'),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(left: 24.0),
+                    child: Text('위험물·중량물 반입 신청서 / 전시홀 사용신고 및 신청서 / 방화관리 신고서 / 상주 요원 및 경비원 명단 신고서 / 광고 홍보물 신청서(홈페이지 자료실 참조) / 개막식 프로그램 / VIP 명단'            ),
+                  )
                 )
               ],
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: FixedPadding.sm),
+            margin: EdgeInsets.only(top: 24.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('※'),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.only(left: FixedPadding.xxs),
-                    child: Text('위험물·중량물 반입 신청서 / 전시홀 사용신고 및 신청서 / 방화관리 신고서 / 상주 요원 및 경비원 명단 신고서 / 광고 홍보물 신청서(홈페이지 자료실 참조) / 개막식 프로그램 / VIP 명단', style: Fonts.footNote()),
-                  ),
-                )
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: FixedPadding.sm),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('※'),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.only(left: FixedPadding.xxs),
-                    child: Text('참가업체 디렉터리 / 예치금 반환용 통장사본', style: Fonts.footNote()),
-                  ),
+                    margin: EdgeInsets.only(left: 24.0),
+                    child: Text('참가업체 디렉터리 / 예치금 반환용 통장사본'),
+                  )
                 )
               ],
             ),
@@ -257,49 +253,23 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
   // 전시장 구분 탭 구성
   _buildBuilding() {
     return PreferredSize(
-      preferredSize: Size.fromHeight(FixedSize.tabBar),
+      preferredSize: Size.fromHeight(32.0),
       child: TabBar(
-        labelPadding: const EdgeInsets.only(top:FixedPadding.md, bottom: FixedPadding.md),
+        labelPadding: const EdgeInsets.only(top:24.0, bottom: 24.0),
         controller: _tabController,
         tabs: _tabBuildingList,
-        // labelStyle: Fonts.caption(bold: true, color: COLOR_DANGER),  // not work
-        labelColor: TEXT_PRIMARY, // 선택된 탭 라벨 색
-        unselectedLabelColor: TEXT_GREY,  // 선택 안된 탭 라벨 색
+        // lab color: COLOR_DANGER),  // not work
+        labelColor: Colors.black, // 선택된 탭 라벨 색
+        unselectedLabelColor: Colors.black,  // 선택 안된 탭 라벨 색
         indicatorSize: TabBarIndicatorSize.tab,
-        indicatorColor: COLOR_PRIMARY,
+        indicatorColor: Colors.black,
         indicatorWeight: 2, // indicatorWeight의 값을 0이 아닌 작은 값으로 하고, indicatorPadding를 삭제하면 indicator가 없는 것처럼 효과를 줄 수 있다.
       )
     );
   }
 
   // 전시관 구분 탭 선택 시, 호출되어 선택된 탭의 정보로 변경
-  void _handleSelectedTab() { // 기본 2번 호출됨.
-    if (_tabController.indexIsChanging) {
-      _onRefresh();
-    }
 
-    setState(() {
-      
-    });
-  }
-
-  // pull to refresh 이벤트 처리
-  Future<void> _onRefresh() async {
-    context.read<MyProvider>().facilityList.clear();
-    _sendHttpGetList();
-    
-    return Future.value({});
-  }
-
-  _sendHttpGetList() async {
-    MyProvider providerRead = context.read<MyProvider>();
-    
-    MyLoader.update(context);
-
-    await providerRead.sendHttpGetFacilityList(FacilityPageType.info, (_tabController.index + 1).toString()); // 시설 목록 가져오기
-
-    MyLoader.update(context, bShow: false);
-  }
 
   @override
   void dispose() {
