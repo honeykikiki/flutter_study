@@ -209,7 +209,7 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.only(left: 24.0),
-                    child: Text('행사계획서 / 사업자등록증 사본 / 임대신청서(홈페이지 자료실 참조) / 날인된 계약서 / 작업 신고서 / 행사 평면도(기본부스, 독립부스) / 기술 지원 신청서 / 물품 반입 신청서'            ),
+                    child: Text('행사계획서 / 사업자등록증 사본 / 임대신청서(홈페이지 자료실 참조) / 날인된 계약서 / 작업 신고서 / 행사 평면도(기본부스, 독립부스) / 기술 지원 신청서 / 물품 반입 신청서'),
                   ),
                 ),
               ],
@@ -224,7 +224,7 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.only(left: 24.0),
-                    child: Text('위험물·중량물 반입 신청서 / 전시홀 사용신고 및 신청서 / 방화관리 신고서 / 상주 요원 및 경비원 명단 신고서 / 광고 홍보물 신청서(홈페이지 자료실 참조) / 개막식 프로그램 / VIP 명단'            ),
+                    child: Text('위험물·중량물 반입 신청서 / 전시홀 사용신고 및 신청서 / 방화관리 신고서 / 상주 요원 및 경비원 명단 신고서 / 광고 홍보물 신청서(홈페이지 자료실 참조) / 개막식 프로그램 / VIP 명단'),
                   )
                 )
               ],
