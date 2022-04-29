@@ -95,7 +95,6 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
 
   // 회의실 대관안내 타이틀
   _buildList(int tabControllerIndex, List titleList, List contentList) {
-
     if (_tabController.index != tabControllerIndex) {
       return Container();
     }
@@ -261,10 +260,7 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
       )
     );
   }
-
-  // 전시관 구분 탭 선택 시, 호출되어 선택된 탭의 정보로 변경
-
-
+  
   @override
   void dispose() {
     super.dispose();
