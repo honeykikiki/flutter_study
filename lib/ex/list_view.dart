@@ -39,7 +39,6 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
     ['정산 내역서 확인', '관리금 예치비 환불', '세금계산서 수령(E-mail)']
   ];
 
-
   @override
   initState() {
     super.initState();
@@ -77,23 +76,18 @@ class _ScreenReverseManagementState extends State<ScreenReverseManagement> with 
   
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      body: Container(
-        child: SingleChildScrollView(
-          controller: _scrollController,
-          padding: const EdgeInsets.only(bottom: 24.0 * 3),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildBuilding(), // 전시장 구분 탭 구성
-              
-              _buildList(0, mettingTitle, mettingContent), // 회의실 대관안내 구성
-              _buildList(1, exhibitionTitle, exhibitionContent), // 전시장 대관안내 구성
-
-              _buildetc(),
-            ]
-          ),
+      body: SingleChildScrollView(
+        controller: _scrollController,
+        padding: const EdgeInsets.only(bottom: 24.0 * 3),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildBuilding(), // 전시장 구분 탭 구성
+            _buildList(0, mettingTitle, mettingContent), // 회의실 대관안내 구성
+            _buildList(1, exhibitionTitle, exhibitionContent), // 전시장 대관안내 구성
+            _buildetc(),
+          ]
         ),
       ),
     );
